@@ -1,0 +1,132 @@
+{
+  "comment": "SBND wire geometry from LArSoft DumpGeometry (sbnd_v02_06). s_view = slope_cm*wire + offset_cm = what_y*y + what_z*z.",
+  "source": "SBND-geometry.txt",
+  "planes": {
+    "tpc0_plane0": {
+      "what_y": -0.8660253028382761,
+      "what_z": 0.5000001748438417,
+      "slope_cm": 0.30000001879101534,
+      "offset_cm": -172.19997483290928,
+      "pitch_cm": 0.3,
+      "theta_deg": 30.000012857270395,
+      "view": "U",
+      "nwires": 1984,
+      "wire_min": 0,
+      "wire_max": 1983,
+      "fit_rms_cm": 0.00019084409546514378,
+      "plane_center": [
+        -201.45,
+        0.0,
+        250.5
+      ],
+      "cryo": 0,
+      "tpc": 0,
+      "plane": 0
+    },
+    "tpc0_plane1": {
+      "what_y": 0.8660253028382761,
+      "what_z": 0.5000001748438417,
+      "slope_cm": 0.30000001879101534,
+      "offset_cm": -172.19997483290928,
+      "pitch_cm": 0.3,
+      "theta_deg": 149.9997778074544,
+      "view": "V",
+      "nwires": 1984,
+      "wire_min": 0,
+      "wire_max": 1983,
+      "fit_rms_cm": 0.00019084409546514378,
+      "plane_center": [
+        -201.75,
+        0.0,
+        250.5
+      ],
+      "cryo": 0,
+      "tpc": 0,
+      "plane": 1
+    },
+    "tpc0_plane2": {
+      "what_y": 0.0,
+      "what_z": 1.0,
+      "slope_cm": 0.2999999999999998,
+      "offset_cm": 0.149999999999996,
+      "pitch_cm": 0.3,
+      "theta_deg": 90.00021045914971,
+      "view": "Z",
+      "nwires": 1670,
+      "wire_min": 0,
+      "wire_max": 1669,
+      "fit_rms_cm": 8.720363557197556e-14,
+      "plane_center": [
+        -202.05,
+        0.0,
+        250.5
+      ],
+      "cryo": 0,
+      "tpc": 0,
+      "plane": 2
+    },
+    "tpc1_plane0": {
+      "what_y": 0.8660253028382761,
+      "what_z": 0.5000001748438417,
+      "slope_cm": 0.30000001879101534,
+      "offset_cm": -172.19997483290928,
+      "pitch_cm": 0.3,
+      "theta_deg": 149.9997778074544,
+      "view": "U",
+      "nwires": 1984,
+      "wire_min": 0,
+      "wire_max": 1983,
+      "fit_rms_cm": 0.00019084409546514378,
+      "plane_center": [
+        201.45,
+        0.0,
+        250.5
+      ],
+      "cryo": 0,
+      "tpc": 1,
+      "plane": 0
+    },
+    "tpc1_plane1": {
+      "what_y": -0.8660253028382761,
+      "what_z": 0.5000001748438417,
+      "slope_cm": 0.30000001879101534,
+      "offset_cm": -172.19997483290928,
+      "pitch_cm": 0.3,
+      "theta_deg": 30.000012857270395,
+      "view": "V",
+      "nwires": 1984,
+      "wire_min": 0,
+      "wire_max": 1983,
+      "fit_rms_cm": 0.00019084409546514378,
+      "plane_center": [
+        201.75,
+        0.0,
+        250.5
+      ],
+      "cryo": 0,
+      "tpc": 1,
+      "plane": 1
+    },
+    "tpc1_plane2": {
+      "what_y": 0.0,
+      "what_z": 1.0,
+      "slope_cm": 0.2999999999999998,
+      "offset_cm": 0.149999999999996,
+      "pitch_cm": 0.3,
+      "theta_deg": 90.00021045914971,
+      "view": "Z",
+      "nwires": 1670,
+      "wire_min": 0,
+      "wire_max": 1669,
+      "fit_rms_cm": 8.720363557197556e-14,
+      "plane_center": [
+        202.05,
+        0.0,
+        250.5
+      ],
+      "cryo": 0,
+      "tpc": 1,
+      "plane": 2
+    }
+  }
+}

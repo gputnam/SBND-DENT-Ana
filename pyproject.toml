@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sbnd-distortion"
+version = "1.0.0"
+description = "SBND field-distortion (2D double-anode) and cathode-distortion analyses"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "pyarrow>=12",
+    "uproot>=5.3",
+    "awkward>=2.4",
+    "matplotlib>=3.7",
+    "pillow>=10.0",
+    "tqdm>=4.6",
+    "dill>=0.3.6",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+# Reading remote /pnfs ntuples over xrootd (the DataFrame builders only).
+xrootd = ["fsspec-xrootd", "xrootd"]
+# experiments/crt_alignment (deprecated JAX rigid-body optimizer).
+experiments = ["jax", "jaxlib"]
+
+# Only the crtlib package is installed; the pipeline scripts stay as flat
+# top-level modules run with `python <script>.py` from the repo root.
+[tool.setuptools]
+packages = ["crtlib"]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: end-to-end mini-run on committed real-data fixtures (slower)",
+]
+testpaths = ["tests"]

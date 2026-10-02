@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+
+# Large data / intermediate products (regenerated or external; see README)
+*.parquet
+*.npz
+*.root
+*.hdf5
+*.h5
+
+# Plots / animations / logs (pipeline outputs)
+*.png
+*.pdf
+*.gif
+*.log
+outputs/
+
+# Large filelists (regenerate with experiments/generators/build_filelist_v11.py;
+# a small example_filelist.txt is committed)
+filelist_*.txt
+Run?_crossingmuon_filelist.txt
+
+# Keep committed test fixtures even though they are parquet/csv/root
+!tests/fixtures/**
+
+# Editor / OS cruft
+.DS_Store
+.idea/
+.vscode/

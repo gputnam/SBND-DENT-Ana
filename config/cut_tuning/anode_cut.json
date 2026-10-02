@@ -1,0 +1,14 @@
+{
+  "comment": "Anode-disagreement quality cut for the 2D double-anode analysis. Discard a track if FOM > cut_cm.",
+  "fom": "per-track max over the two TPC anodes of the RMS of the 3-plane anode-(y,z)-fit residuals (cm)",
+  "method": "cut = median + n_sigma * (1.4826 * MAD)",
+  "cut_cm": 0.89112442189891,
+  "n_sigma": 5.0,
+  "median_cm": 0.14999214106825523,
+  "mad_sigma_cm": 0.14822645616613095,
+  "anode_dt_window_ticks": 40.0,
+  "n_tracks_sampled": 154361,
+  "n_tracks_3plane_anode": 153226,
+  "keep_fraction_3plane": 0.9977288449740905,
+  "keep_fraction_all": 0.9920057527484274
+}

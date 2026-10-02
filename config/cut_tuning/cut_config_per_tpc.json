@@ -1,0 +1,14 @@
+{
+  "comment": "Per-TPC anode-piercing cut on tpc_{0,1}_t_min. Track is kept iff EITHER TPC's t_min lies in this window.",
+  "anode_tick_peak": 418.5,
+  "tpc_t_min_lo": 414.5,
+  "tpc_t_min_hi": 427.5,
+  "threshold_frac": 0.05,
+  "data_source": "raw ntuples (400 files)",
+  "n_track_total": 17382,
+  "n_track_pass": 402,
+  "track_pass_fraction": 0.02312737314463238,
+  "n_tpc_candidates": 19384,
+  "n_tpc_in_window": 441,
+  "tpc_pass_fraction": 0.02275072224515064
+}

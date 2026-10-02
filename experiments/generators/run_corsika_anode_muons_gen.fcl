@@ -1,0 +1,67 @@
+#
+# File:    run_corsika_anode_muons_gen.fcl
+# Purpose: Gen-stage SBND job. Reads a HEPEVT text file of CORSIKA-derived
+#          muons that cross both SBND anodes (one muon per event) via the
+#          LArSoft TextFileGen module, and produces SBND MC gen events.
+#
+# The text file (corsika_anode_muons.txt) is built by make_corsika_anode_muons.py.
+# It is pre-shuffled: TextFileGen reads events strictly in order, so the
+# "one random muon per event" selection is baked into the file -- each line
+# is an independent random draw from the qualifying-muon pool.
+#
+# Usage:
+#   lar -c run_corsika_anode_muons_gen.fcl              # all events in the file
+#   lar -c run_corsika_anode_muons_gen.fcl -n 10        # first 10 events
+#   lar --debug-config cfg.out -c run_corsika_anode_muons_gen.fcl   # parse-check only
+#
+
+#include "simulationservices_sbnd.fcl"
+#include "messages_sbnd.fcl"
+#include "rootoutput_sbnd.fcl"
+
+process_name: AnodeMuonGen
+
+services:
+{
+  TFileService: { fileName: "hists_corsika_anode_muons_gen_%p-%tc.root" }
+  @table::sbnd_simulation_services    # SBND geometry + simulation services
+}
+services.message: @local::sbnd_message_services_interactive
+
+# EmptyEvent source: art creates one empty event per TextFileGen event.
+source:
+{
+  module_type:     EmptyEvent
+  timestampPlugin: { plugin_type: "GeneratedEventTimestamp" }
+  maxEvents:       10000     # = N muons in the text file; -1 also works
+  firstRun:        1
+  firstEvent:      1
+}
+
+physics:
+{
+  producers:
+  {
+    rns:       { module_type: "RandomNumberSaver" }
+
+    generator:
+    {
+      module_type:   "TextFileGen"
+      InputFileName: "/pnfs/sbnd/persistent/users/gputnam/corsika_anode_muons.txt"
+    }
+  }
+
+  simulate:  [ rns, generator ]
+  stream1:   [ out1 ]
+  end_paths: [ stream1 ]
+}
+
+outputs:
+{
+  out1:
+  {
+    @table::sbnd_rootoutput            # inherit shared SBND output settings
+    fileName: "corsika_anode_muons_gen_%p-%tc.root"
+    dataTier: "generated"
+  }
+}

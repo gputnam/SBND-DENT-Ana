@@ -1,0 +1,20 @@
+{
+  "anode_tick": 412,
+  "cathode_tick": 2985,
+  "anode_cathode_crosser": {
+    "t_span_p2_lo": 2551.5,
+    "t_span_p2_hi": 2574.5,
+    "comment": "Tracks with collection-plane time-span inside this tight window around 2575 ticks (FWHM-above-background) are flagged anode-cathode crossers."
+  },
+  "intime_anode_crosser": {
+    "t_min_p2_lo": 417.5,
+    "t_min_p2_hi": 420.5,
+    "comment": "Tracks with earliest collection-plane hit time inside this tight window around the anode tick (FWHM-above-background) are flagged in-time anode crossers."
+  },
+  "yield": {
+    "n_anode_cathode_crossers": 798655,
+    "n_intime_anode_crossers": 285431,
+    "n_total_tracks": 29901031,
+    "n_with_p2_hits": 29811038
+  }
+}

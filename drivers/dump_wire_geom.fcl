@@ -1,0 +1,13 @@
+# Wrapper around sbndcode's dump_sbnd_geometry.fcl that adds an EmptyEvent
+# source so `lar` can run the DumpGeometry analyzer with no input file.
+# Produces SBND-geometry.txt in the working directory.
+
+#include "dump_sbnd_geometry.fcl"
+
+source: {
+  module_type: EmptyEvent
+  maxEvents:    1
+  firstRun:     1
+  firstSubRun:  1
+  firstEvent:   1
+}
